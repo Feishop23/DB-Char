@@ -18,7 +18,7 @@ const login = (req, res) => {
                         role: response.role
                     }, jwtSecret)
                     res.status(200).json({
-                        message: 'Correct Credentials',
+                        message: 'Es mentiris bobis sigue asi te alovius <3',
                         token
                     })
                 } else {

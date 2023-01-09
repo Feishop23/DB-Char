@@ -16,7 +16,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 //? Exportando funcion anonima
 module.exports = (passport) => {
     const options = {
-        jwtFromRequest : ExtractJwt.fromAuthHeaderWithScheme('jwt'),
+        jwtFromRequest : ExtractJwt.fromAuthHeaderWithScheme("jwt"),
         secretOrKey: jwtSecret
     }
     passport.use(
@@ -24,10 +24,11 @@ module.exports = (passport) => {
             //? done(error, decoded)
             try {
                 const response = await getUserById(decoded.id)
+                console.log('decoded JWT', decoded)
+
                 if(!response){
                     return done(null, false)
                 }
-                console.log('decoded JWT', decoded)
                 return done(null, decoded)
             } catch (error) {
                 return done(error, false)

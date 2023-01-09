@@ -29,10 +29,9 @@ const getAllMessage = (req,res) => {
 }
 
 const createMessage = (req, res) => {
-    const senderId = req.user.id
-    const {conversationId, message} = req.body
-    if(conversationId && message){
-        messageController.createPost({senderId, conversationId, message}
+    const { message} = req.body
+    if( message){
+        messageController.createMessage({ message}
             )
             .then(data => {
                 res.status(201).json(data)
@@ -44,9 +43,7 @@ const createMessage = (req, res) => {
         res.status(400).json({
             message: 'missing data',
             fields: {
-                message: 'string',
-                senderId: 'uuid',
-                conversationId: 'uuid'
+                message: 'string'
             }
         })
     }

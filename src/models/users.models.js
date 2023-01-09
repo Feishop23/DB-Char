@@ -7,11 +7,11 @@ id:{
     primaryKey:true,
     allowNull:false
 },
-firstname:{
+firstName:{
     type:DataTypes.STRING,
     allowNull:false
 },
-lastname:{
+lastName:{
     type:DataTypes.STRING,
     allowNull:false
 },
