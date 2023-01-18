@@ -41,7 +41,7 @@ const createMessage = (req, res) => {
             })
     }else{
         res.status(400).json({
-            message: 'missing data',
+            message: 'missing data err',
             fields: {
                 message: 'string'
             }
